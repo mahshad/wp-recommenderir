@@ -1,0 +1,119 @@
+/* Column Classes
+ *
+ * Width: 1200px
+ * Gutter: 20px
+ * Link: http://www.billerickson.net/column-class-generator/
+--------------------------------------------- */
+
+.recom-five-sixths,
+.recom-four-sixths,
+.recom-four-fifths,
+.recom-one-fifth,
+.recom-one-fourth,
+.recom-one-half,
+.recom-one-sixth,
+.recom-one-third,
+.recom-three-fourths,
+.recom-three-fifths,
+.recom-three-sixths,
+.recom-two-fourths,
+.recom-two-fifths,
+.recom-two-sixths,
+.recom-two-thirds {
+	float: right;
+	margin-right: 1.666666667%;
+}
+ 
+.recom-one-half,
+.recom-three-sixths,
+.recom-two-fourths {
+	width: 49.1666666667%;
+}
+ 
+.recom-one-third,
+.recom-two-sixths {
+	width: 32.2222222222%;
+}
+ 
+.recom-four-sixths,
+.recom-two-thirds {
+	width: 66.1111111111%;
+}
+ 
+.recom-one-fourth {
+	width: 23.75%;
+}
+ 
+.recom-three-fourths {
+	width: 74.5833333333%;
+}
+ 
+.recom-one-fifth {
+	width: 18.6666666667%;
+}
+ 
+.recom-two-fifths {
+	width: 39%;
+}
+ 
+.recom-three-fifths {
+	width: 59.3333333333%;
+}
+ 
+.recom-four-fifths {
+	width: 79.6666666667%;
+}
+ 
+.recom-one-sixth {
+	width: 15.2777777778%;
+}
+ 
+.recom-five-sixths {
+	width: 83.0555555556%;
+}
+ 
+.recom-first {
+	clear: left;
+	margin-right: 0;
+}
+
+.recom-posts-listing {
+	clear: both;
+	list-style-type: none;
+}
+
+.recom-item {margin-bottom: 10px;font-size: 14px;}
+
+.recom-item-inner {
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,0.35);
+    box-shadow: 0 0 3px rgba(0,0,0,0.35);
+    -webkit-transition: height .1s ease-in-out,margin .1s ease-in-out;
+    -moz-transition: height .1s ease-in-out,margin .1s ease-in-out;
+    -o-transition: height .1s ease-in-out,margin .1s ease-in-out;
+    transition: height .1s ease-in-out,margin .1s ease-in-out;
+}
+
+.recom-wrapper-link {
+	display: block;
+	padding: 5px 7px;
+}
+
+.recom-item-inner .recom-image img {
+	margin: 0 auto;
+	width: 100%;
+	min-height: 150px;
+}
+
+.recom-item-inner .recom-datetime,
+.recom-item-inner .recom-excerpt,
+.recom-item-inner .recom-content {
+    display: block;
+}
+
+.recom-item-inner .recom-date-time {
+	color: #333;
+	font-size: 13px;
+	text-align: left;
+}
