@@ -121,7 +121,7 @@ class Init extends Base
 		$value = $this->cart_rate;
 		
 		if( $this->active_cart )
-			$result = $this->recommender_method( 'ingest', compact('id', 'url', 'value') );
+			$result = $this->recommender->recommender_method( 'ingest', compact('id', 'url', 'value') );
 
 		return $result;
 	}
