@@ -1,6 +1,5 @@
 <div class="wrap">
-	<div id="icon-themes" class="icon32"></div>
-	<h2>تنظیمات رکامندر</h2>
+	<h1>تنظیمات رکامندر</h1>
 	<?php
 	settings_errors();
 
