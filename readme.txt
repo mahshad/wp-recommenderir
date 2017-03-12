@@ -13,16 +13,17 @@ Wordpress and Woocommerce Plugin for Recommender.ir
 
 Once you have activated the plugin, go to the 'Recommender' screen from your wordpress dashboard to configure the plugin.
 
-**Main settings tab**
+= Main settings tab =
 You have to enter your recommender.ir service address.
 
 **[Note]** Please make sure you opened your recommender.ir service port as a outbound port.
 
-**Advanced settings tab**
+= Advanced settings tab =
 You can configure some advanced settings.
 
-**Widget**
+= Widget =
 You can use recommender widget in order to show following methods:
+
 * recommend (recommend to user)
 * similarity (similar items)
 * trendShortTime (trends in short time)
