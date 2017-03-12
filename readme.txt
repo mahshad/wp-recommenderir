@@ -11,16 +11,42 @@ Wordpress and Woocommerce Plugin for Recommender.ir
 
 == Description ==
 
-To order or request additional information, please visit http://recommender.ir/#order
+Once you have activated the plugin, go to the 'Recommender' screen from your wordpress dashboard to configure the plugin.
+
+**Main settings tab**
+You have to enter your recommender.ir service address.
+
+**[Note]** Please make sure you opened your recommender.ir service port as a outbound port.
+
+**Advanced settings tab**
+You can configure some advanced settings.
+
+**Widget**
+You can use recommender widget in order to show following methods:
+* recommend (recommend to user)
+* similarity (similar items)
+* trendShortTime (trends in short time)
+* trendLongTime (trends in long time)
+
+Requires at least Wordpress 4.0 and PHP 5.4
+
+To order or request additional information, please visit <http://recommender.ir/#order>
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/wp-recommenderir` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/recommender` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Use the Recommender screen to configure the plugin
+4. Make sure you opened your recommender.ir service port as a outbound port
 
 == Screenshots ==
 
 1. Plugin main settings
 2. Plugin advanced settings
 3. Widget
+
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Just released.
