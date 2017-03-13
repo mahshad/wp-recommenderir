@@ -46,8 +46,15 @@ To order or request additional information, please visit <http://recommender.ir/
 2. Plugin advanced settings
 3. Widget
 
+== Changelog ==
 
-== Upgrade Notice ==
+= 1.0.1 =
+Fixed a bug.
 
 = 1.0.0 =
 Just released.
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+Fixed a bug.

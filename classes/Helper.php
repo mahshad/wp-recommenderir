@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 class Helper
 {
-    public static function set_userID()
+	public static function set_userID()
     {
         global $user_ID;
 
@@ -46,7 +46,10 @@ class Helper
 
     public static function get_userID()
     {
-        $cookie_name = $_SERVER['SERVER_NAME'] . '_recomUser';
+    	$cookie_name = $_SERVER['SERVER_NAME'] . '_recomUser';
+    	// You can set them with dots using Javascript, but when you go to access them, the dots magically become underscores [ _ ]
+        $cookie_name = str_replace('.', '_', $cookie_name);
+
         $user_ID = isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : self::set_userID();
 
         return $user_ID;

@@ -4,7 +4,7 @@
  * Plugin Name:       سرویس رکامندر
  * Plugin URI:        https://github.com/missprogrammer/wp-recommenderir
  * Description:       Wordpress and Woocommerce Plugin for Recommender.ir
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            مهشاد کلانتری
  * Author URI:        http://mahshad.me/
  * License:           GPLv2 or later
