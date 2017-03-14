@@ -116,14 +116,12 @@ class Init extends Base
 
 	public function woocommerce_add_to_cart( $cart_item_key , $product_id )
 	{
-		$result = null;
-
 		$id = $this->user_id;
 		$url = "'wp-{$product_id}'";
 		$value = $this->cart_rate;
 		
 		if( $this->active_cart )
-			$result = $this->recommender->post_ingest( compact('id', 'url', 'value') );
+			$result = $this->recommender->recommender_method( 'ingest', compact('id', 'url', 'value') );
 
 		return $result;
 	}

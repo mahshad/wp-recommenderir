@@ -48,15 +48,11 @@ To order or request additional information, please visit <http://recommender.ir/
 
 == Changelog ==
 
-= 1.0.2 =
-* Fixed an error.
-* Change ingest method to POST.
-
 = 1.0.1 =
-* Fixed a bug.
+Fixed a bug.
 
 = 1.0.0 =
-* Just released.
+Just released.
 
 == Upgrade Notice ==
 

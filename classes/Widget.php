@@ -15,7 +15,7 @@ class Widget extends \WP_Widget {
 
     public function widget( $args, $instance )
     {
-        global $post;
+global $post;
         $method = $instance['method'];
         $how_many = $instance['how_many'];
         $dither = $instance['dither'] ? 'true' : 'false';
