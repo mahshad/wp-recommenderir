@@ -34,7 +34,7 @@ class Ajax extends Base
 		$url = "'wp-{$item}'";
 		$value = $this->{$type.'_rate'};
 
-		$result = $this->recommender->recommender_method( 'ingest', compact('id', 'url', 'value') );
+		$result = $this->recommender->post_ingest( compact('id', 'url', 'value') );
 
 		wp_send_json_success( compact('result') );
 	}
