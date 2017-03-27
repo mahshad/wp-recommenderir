@@ -165,20 +165,20 @@ class Widget extends \WP_Widget {
         return [
             'recommend' => __('Recommend to user', 'recommender-ir'),
             'similarity' => __('Similar Items', 'recommender-ir'),
-            'trendShortTime' => __('The most popular items in the moment (Trends) - Short time', 'recommender-ir'),
-            'trendLongTime' => __('The most popular items in the moment (Trends) - Long time', 'recommender-ir')
+            'trendShortTime' => __('Short Period of Time Trends', 'recommender-ir'),
+            'trendLongTime' => __('Long Period of Time Trends', 'recommender-ir')
         ];
     }
 
     protected function get_columns()
     {
         return [
-            '1' => __('1 column', 'recommender-ir'),
-            '2' => __('2 columns', 'recommender-ir'),
-            '3' => __('3 columns', 'recommender-ir'),
-            '4' => __('4 columns', 'recommender-ir'),
-            '5' => __('5 columns', 'recommender-ir'),
-            '6' => __('6 columns', 'recommender-ir'),
+            '1' => __('1 Column', 'recommender-ir'),
+            '2' => __('2 Columns', 'recommender-ir'),
+            '3' => __('3 Columns', 'recommender-ir'),
+            '4' => __('4 Columns', 'recommender-ir'),
+            '5' => __('5 Columns', 'recommender-ir'),
+            '6' => __('6 Columns', 'recommender-ir'),
         ];
     }
 }

@@ -53,70 +53,70 @@ class Settings
 			'fields' => array(
 				array(
 					'id' => 'cookie_check',
-					'label' => __('Unification of cookies', 'recommender-ir'),
+					'label' => __('Unification of Cookies', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user is logged in with different devices, then the same cookie will be stored in each device.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_scroll',
-					'label' => __('Scroll counter', 'recommender-ir'),
+					'label' => __('Scroll Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user is scrolling the screen, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_read',
-					'label' => __('Post reading counter', 'recommender-ir'),
+					'label' => __('Post Reading Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user is reading the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_cart',
-					'label' => __('Add to cart counter', 'recommender-ir'),
+					'label' => __('Add to Cart Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user is adding the product to cart, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_like',
-					'label' => __('Like counter', 'recommender-ir'),
+					'label' => __('Like Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user likes the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'selector_like',
-					'label' => __('Like selector path', 'recommender-ir'),
+					'label' => __('Like Selector Path', 'recommender-ir'),
 					'type' => 'text',
 					'dir' => 'ltr',
 					'description' => __('The selector path of like button<br>For example: <span dir="ltr">#somediv .likebox a</span>', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_share',
-					'label' => __('Share counter', 'recommender-ir'),
+					'label' => __('Share Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user shared the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'selector_share',
-					'label' => __('Share selector path', 'recommender-ir'),
+					'label' => __('Share Selector Path', 'recommender-ir'),
 					'type' => 'text',
 					'dir' => 'ltr',
 					'description' => __('The selector path of share button<br>For example: <span dir="ltr">#somediv .sharebox a</span>', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_copy',
-					'label' => __('Content copy counter', 'recommender-ir'),
+					'label' => __('Content Copy Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('If user is copy the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_hash',
-					'label' => __('Hash counter', 'recommender-ir'),
+					'label' => __('Hash Counter', 'recommender-ir'),
 					'type' => 'checkbox',
 					'option' => __('Activate', 'recommender-ir'),
 					'description' => __('Enabling this option, the user cookie will be added to all links as a hash<br>If the user share the post link, we can determine the user, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
