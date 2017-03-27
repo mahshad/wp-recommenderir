@@ -49,7 +49,7 @@ class Init extends Base
 	function plugin_settings_link( $links )
 	{
 		$url = get_admin_url() . 'admin.php?page=recommender_settings';
-		$settings_link = '<a href="'.$url.'">تنظیمات</a>'; 
+		$settings_link = '<a href="'.$url.'">'.__('Settings page', 'recommender-ir').'</a>'; 
 		array_unshift( $links, $settings_link );
 
 		return $links; 

@@ -17,7 +17,7 @@ class Settings
 
 	public function settings_menu()
 	{
-		add_menu_page( 'رکامندر', 'رکامندر', 'manage_options', 'recommender_settings', [&$this, 'settings_page'], null, 999 );
+		add_menu_page( __('Recommender', 'recommender-ir'), __('Recommender', 'recommender-ir'), 'manage_options', 'recommender_settings', [&$this, 'settings_page'], null, 999 );
 	}
 
 	public function settings_page()
@@ -40,8 +40,8 @@ class Settings
 			'fields' => array(
 				array(
 					'id' => 'address',
-					'label' => 'آدرس سرور',
-					'description' => 'مثلا <span dir="ltr">http://185.83.114.53:8090</span>',
+					'label' => __('IP&Port Address', 'recommender-ir'),
+					'description' => __('For example:', 'recommender-ir') .' <span dir="ltr">http://192.168.0.1:1234</span>',
 					'type' => 'text',
 					'dir' => 'ltr'
 				)
@@ -53,73 +53,73 @@ class Settings
 			'fields' => array(
 				array(
 					'id' => 'cookie_check',
-					'label' => 'یکسان سازی کوکی کاربر در دستگاه های مختلف',
+					'label' => __('Unification of cookies', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر با چند سیستم در سایت لاگین کند، در هر سیستم کوکی یکسانی ذخیره می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user is logged in with different devices, then the same cookie will be stored in each device.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_scroll',
-					'label' => 'محسابه‌گر اسکرول',
+					'label' => __('Scroll counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر صفحه را اسکرول کند، میزانی از علاقه‌مندی برای او ثبت می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user is scrolling the screen, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_read',
-					'label' => 'محسابه‌گر خواندن مطلب',
+					'label' => __('Post reading counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر درحال خواندن مطلب باشد، میزانی از علاقه‌مندی برای او ثبت می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user is reading the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_cart',
-					'label' => 'محسابه‌گر سبد خرید',
+					'label' => __('Add to cart counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر محصولی به سبد خرید اضافه کند، میزانی از علاقه‌مندی برای او ثبت می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user is adding the product to cart, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_like',
-					'label' => 'محسابه‌گر لایک',
+					'label' => __('Like counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر اقدام به لایک مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user likes the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'selector_like',
-					'label' => 'سلکتور لایک',
+					'label' => __('Like selector path', 'recommender-ir'),
 					'type' => 'text',
 					'dir' => 'ltr',
-					'description' => 'مسیر سلکتور دکمه لایک<br>مثلا <span dir="ltr">#somediv .likebox a</span>'
+					'description' => __('The selector path of like button<br>For example: <span dir="ltr">#somediv .likebox a</span>', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_share',
-					'label' => 'محسابه‌گر اشتراک‌گذاری',
+					'label' => __('Share counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر اقدام به اشتراک‌گذاری مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user shared the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'selector_share',
-					'label' => 'سلکتور اشتراک‌گذاری',
+					'label' => __('Share selector path', 'recommender-ir'),
 					'type' => 'text',
 					'dir' => 'ltr',
-					'description' => 'مسیر سلکتور دکمه اشتراک‌گذاری<br>مثلا <span dir="ltr">#somediv .sharebox a</span>'
+					'description' => __('The selector path of share button<br>For example: <span dir="ltr">#somediv .sharebox a</span>', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_copy',
-					'label' => 'محسابه‌گر کپی',
+					'label' => __('Content copy counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'اگر کاربر اقدام به کپی از مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('If user is copy the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				),
 				array(
 					'id' => 'active_hash',
-					'label' => 'محسابه‌گر هش',
+					'label' => __('Hash counter', 'recommender-ir'),
 					'type' => 'checkbox',
-					'option' => 'فعال',
-					'description' => 'با فعال‌سازی این گزینه به تمام لینک ها کد شناسایی کاربر اضافه خواهد شد<br>در صورتی که کاربر لینکی را برای جایی بفرستد می‌توان فهمید کدام کاربر بوده و میزانی از علاقه‌مندی را برایش ثبت کرد'
+					'option' => __('Activate', 'recommender-ir'),
+					'description' => __('Enabling this option, the user cookie will be added to all links as a hash<br>If the user share the post link, we can determine the user, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
 				)
 			)
 		);

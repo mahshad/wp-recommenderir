@@ -8,9 +8,9 @@ class Widget extends \WP_Widget {
     {
         $widget_ops = array( 
             'classname' => 'recommender_widget',
-            'description' => 'رکامندر',
+            'description' => __('Recommender', 'recommender-ir'),
         );
-        parent::__construct( 'recommender_widget', 'رکامندر' );
+        parent::__construct( 'recommender_widget', __('Recommender', 'recommender-ir') );
     }
 
     public function widget( $args, $instance )
@@ -105,10 +105,10 @@ class Widget extends \WP_Widget {
         $recommend_style = ( !$method || $method == 'recommend' ) ? 'display:block;' : 'display:none;';
         $similar_style = ( $method == 'similarity' ) ? 'display:block;' : 'display:none;';
         ?>
-        <p><label for="<?php echo $this->get_field_id('title'); ?>">عنوان:</label>
+        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'recommender-ir') ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 
-        <p><label for="<?php echo $this->get_field_id('method'); ?>">متد:</label>
+        <p><label for="<?php echo $this->get_field_id('method'); ?>"><?php _e('Method', 'recommender-ir') ?>:</label>
         <select class="widefat method" id="<?php echo $this->get_field_id('method'); ?>" name="<?php echo $this->get_field_name('method'); ?>">
         <?php
             foreach($this->get_recommender_list_type() as $lkey => $lvalue)
@@ -116,20 +116,20 @@ class Widget extends \WP_Widget {
         ?>
         </select></p>
 
-        <p class="similar" style="<?php echo $similar_style; ?>color:red;">از این متد تنها در ابزارک‌های صفحات داخلی استفاده کنید</p>
+        <p class="similar" style="<?php echo $similar_style; ?>color:red;"><?php _e('Please use this method only on single pages', 'recommender-ir') ?></p>
 
-        <p><label for="<?php echo $this->get_field_id('how_many'); ?>">تعداد آیتم‌ها:</label>
+        <p><label for="<?php echo $this->get_field_id('how_many'); ?>"><?php _e('The number of items', 'recommender-ir') ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('how_many'); ?>" name="<?php echo $this->get_field_name('how_many'); ?>" type="number" value="<?php echo esc_attr($how_many); ?>" min="1" /></p>
 
         
-        <p class="recommend" style="<?php echo $recommend_style; ?>"><input id="<?php echo $this->get_field_id('dither'); ?>" name="<?php echo $this->get_field_name('dither'); ?>" type="checkbox" <?php checked($dither); ?> />&nbsp;<label for="<?php echo $this->get_field_id('dither'); ?>">پیشنهاد لرزان</label></p>
+        <p class="recommend" style="<?php echo $recommend_style; ?>"><input id="<?php echo $this->get_field_id('dither'); ?>" name="<?php echo $this->get_field_name('dither'); ?>" type="checkbox" <?php checked($dither); ?> />&nbsp;<label for="<?php echo $this->get_field_id('dither'); ?>"><?php _e('Dither', 'recommender-ir') ?></label></p>
         
         <p class="recommend" style="<?php echo $recommend_style; ?>">
-            <label for="<?php echo $this->get_field_id('radius'); ?>">شعاع:</label>
+            <label for="<?php echo $this->get_field_id('radius'); ?>"><?php _e('Radius', 'recommender-ir') ?>:</label>
             <input class="widefat" id="<?php echo $this->get_field_id('radius'); ?>" name="<?php echo $this->get_field_name('radius'); ?>" type="number" value="<?php echo esc_attr($radius); ?>" min="1" />
         </p>
 
-        <p><label for="<?php echo $this->get_field_id('columns'); ?>">ستون‌بندی آیتم‌ها:</label>
+        <p><label for="<?php echo $this->get_field_id('columns'); ?>"><?php _e('Column layouts of items', 'recommender-ir') ?>:</label>
         <select class="widefat columns" id="<?php echo $this->get_field_id('columns'); ?>" name="<?php echo $this->get_field_name('columns'); ?>">
         <?php
             foreach($this->get_columns() as $lkey => $lvalue)
@@ -144,17 +144,17 @@ class Widget extends \WP_Widget {
         <input class="widefat" id="<?php echo $this->get_field_id('category_label'); ?>" name="<?php echo $this->get_field_name('category_label'); ?>" type="text" value="<?php echo esc_attr($category_label); ?>" /></p>
         */ ?>
 
-        <p><input id="<?php echo $this->get_field_id('image_size'); ?>" name="<?php echo $this->get_field_name('image_size'); ?>" type="checkbox" <?php checked($image_size); ?> />&nbsp;<label for="<?php echo $this->get_field_id('image_size'); ?>">نمایش تصویر آیتم‌ها</label></p>
+        <p><input id="<?php echo $this->get_field_id('image_size'); ?>" name="<?php echo $this->get_field_name('image_size'); ?>" type="checkbox" <?php checked($image_size); ?> />&nbsp;<label for="<?php echo $this->get_field_id('image_size'); ?>"><?php _e('Display Post Thumbnail', 'recommender-ir') ?></label></p>
 
-        <p><input id="<?php echo $this->get_field_id('include_title'); ?>" name="<?php echo $this->get_field_name('include_title'); ?>" type="checkbox" <?php checked($include_title); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_title'); ?>">نمایش عنوان آیتم‌ها</label></p>
+        <p><input id="<?php echo $this->get_field_id('include_title'); ?>" name="<?php echo $this->get_field_name('include_title'); ?>" type="checkbox" <?php checked($include_title); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_title'); ?>"><?php _e('Display Post Title', 'recommender-ir') ?></label></p>
 
-        <p><input id="<?php echo $this->get_field_id('include_date'); ?>" name="<?php echo $this->get_field_name('include_date'); ?>" type="checkbox" <?php checked($include_date); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_date'); ?>">نمایش تاریخ آیتم‌ها</label></p>
+        <p><input id="<?php echo $this->get_field_id('include_date'); ?>" name="<?php echo $this->get_field_name('include_date'); ?>" type="checkbox" <?php checked($include_date); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_date'); ?>"><?php _e('Display Post Date', 'recommender-ir') ?></label></p>
 
-        <p><input id="<?php echo $this->get_field_id('include_time'); ?>" name="<?php echo $this->get_field_name('include_time'); ?>" type="checkbox" <?php checked($include_time); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_time'); ?>">نمایش زمان آیتم‌ها</label></p>
+        <p><input id="<?php echo $this->get_field_id('include_time'); ?>" name="<?php echo $this->get_field_name('include_time'); ?>" type="checkbox" <?php checked($include_time); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_time'); ?>"><?php _e('Display Post Time', 'recommender-ir') ?></label></p>
 
-        <p><input id="<?php echo $this->get_field_id('include_excerpt'); ?>" name="<?php echo $this->get_field_name('include_excerpt'); ?>" type="checkbox" <?php checked($include_excerpt); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_excerpt'); ?>">نمایش خلاصه آیتم‌ها</label></p>
+        <p><input id="<?php echo $this->get_field_id('include_excerpt'); ?>" name="<?php echo $this->get_field_name('include_excerpt'); ?>" type="checkbox" <?php checked($include_excerpt); ?> />&nbsp;<label for="<?php echo $this->get_field_id('include_excerpt'); ?>"><?php _e('Display Post Summary', 'recommender-ir') ?></label></p>
 
-        <p><label for="<?php echo $this->get_field_id('excerpt_length'); ?>">طول خلاصه:</label>
+        <p><label for="<?php echo $this->get_field_id('excerpt_length'); ?>"><?php _e('Post Summary Length', 'recommender-ir') ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('excerpt_length'); ?>" name="<?php echo $this->get_field_name('excerpt_length'); ?>" type="number" value="<?php echo esc_attr($excerpt_length); ?>" min="1" /></p>
 
         <?php
@@ -163,22 +163,22 @@ class Widget extends \WP_Widget {
     protected function get_recommender_list_type()
     {
         return [
-            'recommend' => 'پیشنهاد به کاربر',
-            'similarity' => 'آیتم های مشابه',
-            'trendShortTime' => ' محبوبترن آیتم‌ها در لحظه (ترندز) - کوتاه مدت',
-            'trendLongTime' => ' محبوبترن آیتم‌ها در لحظه (ترندز) - بلند مدت'
+            'recommend' => __('Recommend to user', 'recommender-ir'),
+            'similarity' => __('Similar Items', 'recommender-ir'),
+            'trendShortTime' => __('The most popular items in the moment (Trends) - Short time', 'recommender-ir'),
+            'trendLongTime' => __('The most popular items in the moment (Trends) - Long time', 'recommender-ir')
         ];
     }
 
     protected function get_columns()
     {
         return [
-            '1' => '1 ستونه',
-            '2' => '2 ستونه',
-            '3' => '3 ستونه',
-            '4' => '4 ستونه',
-            '5' => '5 ستونه',
-            '6' => '6 ستونه',
+            '1' => __('1 column', 'recommender-ir'),
+            '2' => __('2 columns', 'recommender-ir'),
+            '3' => __('3 columns', 'recommender-ir'),
+            '4' => __('4 columns', 'recommender-ir'),
+            '5' => __('5 columns', 'recommender-ir'),
+            '6' => __('6 columns', 'recommender-ir'),
         ];
     }
 }
