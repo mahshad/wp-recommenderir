@@ -1,0 +1,292 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: Recommender Service\n"
+"POT-Creation-Date: 2017-08-14 21:37+0430\n"
+"PO-Revision-Date: 2017-08-15 00:13+0430\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.13\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Mahshad Kalantari <mopomoor@gmail.com>\n"
+"Language: fa_IR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/templates/settings.php:2
+msgid "Recommender Settings"
+msgstr "تنظیمات رکامندر"
+
+#: assets/templates/settings.php:10
+msgid "General"
+msgstr "عمومی"
+
+#: assets/templates/settings.php:11
+msgid "Advanced"
+msgstr "پیشرفته"
+
+#: classes/Init.php:59
+msgid "Settings page"
+msgstr "صفحه تنظیمات"
+
+#: classes/Settings.php:20 classes/Widget.php:11 classes/Widget.php:12
+msgid "Recommender"
+msgstr "رکامندر"
+
+#: classes/Settings.php:26
+msgid "You do not have sufficient permissions to access this page."
+msgstr "شما مجوز کافی برای دسترسی به این صفحه را ندارید."
+
+#: classes/Settings.php:43
+msgid "Service Address"
+msgstr "آدرس سرویس"
+
+#: classes/Settings.php:44
+msgid "http://192.168.0.1:1234"
+msgstr ""
+
+#: classes/Settings.php:47
+#, php-format
+msgid "For example: <span dir=\"ltr\">http://192.168.0.1:1234</span>"
+msgstr "مثلا: <span dir=\"ltr\">http://192.168.0.1:1234</span>"
+
+#: classes/Settings.php:51
+msgid "Sending tags"
+msgstr "ارسال برچسب‌ها"
+
+#: classes/Settings.php:53 classes/Settings.php:66 classes/Settings.php:73
+#: classes/Settings.php:80 classes/Settings.php:87 classes/Settings.php:94
+#: classes/Settings.php:108 classes/Settings.php:122 classes/Settings.php:129
+msgid "Active"
+msgstr "فعال"
+
+#: classes/Settings.php:54
+msgid "Send post tags to recommender service."
+msgstr "ارسال برچسب‌های پست به سرویس رکامندر."
+
+#: classes/Settings.php:64
+msgid "Unification of Cookies"
+msgstr "یکسان سازی کوکی کاربر در دستگاه های مختلف"
+
+#: classes/Settings.php:67
+msgid ""
+"If user is logged in with different devices, then the same cookie will be stored "
+"in each device."
+msgstr ""
+"اگر کاربر با چند سیستم در سایت لاگین کند، در هر سیستم کوکی یکسانی ذخیره می‌شود."
+
+#: classes/Settings.php:71
+msgid "Scroll Counter"
+msgstr "محسابه‌گر اسکرول"
+
+#: classes/Settings.php:74
+msgid ""
+"If user is scrolling the screen, then some rate of interest will be ingested to "
+"recommender service."
+msgstr "اگر کاربر صفحه را اسکرول کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+
+#: classes/Settings.php:78
+msgid "Post Reading Counter"
+msgstr "محسابه‌گر خواندن مطلب"
+
+#: classes/Settings.php:81
+msgid ""
+"If user is reading the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr "اگر کاربر درحال خواندن مطلب باشد، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+
+#: classes/Settings.php:85
+msgid "Add to Cart Counter"
+msgstr "محسابه‌گر سبد خرید"
+
+#: classes/Settings.php:88
+msgid ""
+"If user is adding the product to cart, then some rate of interest will be ingested "
+"to recommender service."
+msgstr ""
+"اگر کاربر محصولی به سبد خرید اضافه کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+
+#: classes/Settings.php:92
+msgid "Like Counter"
+msgstr "محسابه‌گر لایک"
+
+#: classes/Settings.php:95
+msgid ""
+"If user likes the post, then some rate of interest will be ingested to recommender "
+"service."
+msgstr "اگر کاربر اقدام به لایک مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+
+#: classes/Settings.php:99
+msgid "Like Selector Path"
+msgstr "سلکتور لایک"
+
+#: classes/Settings.php:102
+msgid ""
+"The selector path of like button<br>For example: <span dir=\"ltr\">#somediv ."
+"likebox a</span>"
+msgstr "مسیر سلکتور دکمه لایک<br>مثلا <span dir=\"ltr\">#somediv .likebox a</span>"
+
+#: classes/Settings.php:106
+msgid "Share Counter"
+msgstr "محسابه‌گر اشتراک‌گذاری"
+
+#: classes/Settings.php:109
+msgid ""
+"If user shared the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr ""
+"اگر کاربر اقدام به اشتراک‌گذاری مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+
+#: classes/Settings.php:113
+msgid "Share Selector Path"
+msgstr "سلکتور اشتراک‌گذاری"
+
+#: classes/Settings.php:116
+msgid ""
+"The selector path of share button<br>For example: <span dir=\"ltr\">#somediv ."
+"sharebox a</span>"
+msgstr ""
+"مسیر سلکتور دکمه اشتراک‌گذاری<br>مثلا <span dir=\"ltr\">#somediv .sharebox a</span>"
+
+#: classes/Settings.php:120
+msgid "Content Copy Counter"
+msgstr "محسابه‌گر کپی"
+
+#: classes/Settings.php:123
+msgid ""
+"If user is copy the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr "اگر کاربر اقدام به کپی از مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+
+#: classes/Settings.php:127
+msgid "Hash Counter"
+msgstr "محسابه‌گر هش"
+
+#: classes/Settings.php:130
+msgid ""
+"Enabling this option, the user cookie will be added to all links as a hash<br>If "
+"the user share the post link, we can determine the user, then some rate of "
+"interest will be ingested to recommender service."
+msgstr ""
+"با فعال‌سازی این گزینه به تمام لینک ها کد شناسایی کاربر اضافه خواهد شد<br>در صورتی "
+"که کاربر لینکی را برای جایی بفرستد می‌توان فهمید کدام کاربر بوده و میزانی از "
+"علاقه‌مندی را برایش ثبت کرد."
+
+#: classes/Widget.php:113
+msgid "Title"
+msgstr "عنوان"
+
+#: classes/Widget.php:116
+msgid "Method"
+msgstr "متد"
+
+#: classes/Widget.php:124
+msgid "Please use this method only on single pages."
+msgstr "از این متد تنها در ابزارک‌های صفحات داخلی استفاده کنید."
+
+#: classes/Widget.php:126
+msgid "The number of items"
+msgstr "تعداد آیتم‌ها"
+
+#: classes/Widget.php:130
+msgid "Dither"
+msgstr "پیشنهاد لرزان"
+
+#: classes/Widget.php:133
+msgid "Radius"
+msgstr "شعاع"
+
+#: classes/Widget.php:137
+msgid "Column layouts of items"
+msgstr "ستون‌بندی آیتم‌ها"
+
+#: classes/Widget.php:152
+msgid "Display Post Thumbnail"
+msgstr "نمایش تصویرشاخص پست"
+
+#: classes/Widget.php:154
+msgid "Display Post Title"
+msgstr "نمایش عنوان پست"
+
+#: classes/Widget.php:156
+msgid "Display Post Date"
+msgstr "نمایش تاریخ پست"
+
+#: classes/Widget.php:158
+msgid "Display Post Time"
+msgstr "نمایش زمان پست"
+
+#: classes/Widget.php:160
+msgid "Display Post Summary"
+msgstr "نمایش خلاصه پست"
+
+#: classes/Widget.php:162
+msgid "Post Summary Length"
+msgstr "طول خلاصه پست"
+
+#: classes/Widget.php:171
+msgid "Recommend to user"
+msgstr "پیشنهاد به کاربر"
+
+#: classes/Widget.php:172
+msgid "Similar Items"
+msgstr "آیتم های مشابه"
+
+#: classes/Widget.php:173
+msgid "Short Period of Time Trends"
+msgstr "محبوبترن آیتم‌ها در لحظه (ترندز) - کوتاه مدت"
+
+#: classes/Widget.php:174
+msgid "Long Period of Time Trends"
+msgstr "محبوبترن آیتم‌ها در لحظه (ترندز) - بلند مدت"
+
+#: classes/Widget.php:181
+msgid "1 Column"
+msgstr "1 ستونه"
+
+#: classes/Widget.php:182
+msgid "2 Columns"
+msgstr "2 ستونه"
+
+#: classes/Widget.php:183
+msgid "3 Columns"
+msgstr "3  ستونه"
+
+#: classes/Widget.php:184
+msgid "4 Columns"
+msgstr "4 ستونه"
+
+#: classes/Widget.php:185
+msgid "5 Columns"
+msgstr "5 ستونه"
+
+#: classes/Widget.php:186
+msgid "6 Columns"
+msgstr "6 ستونه"
+
+#. Plugin Name of the plugin/theme
+msgid "Recommender Service"
+msgstr "سرویس رکامندر"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/mahshad/wp-recommenderir"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Wordpress and Woocommerce Plugin for Recommender.ir"
+msgstr "پلاگین وردپرس و ووکامرس سرویس رکامندر.آی آر"
+
+#. Author of the plugin/theme
+msgid "Mahshad Kalantari"
+msgstr "مهشاد کلانتری"
+
+#. Author URI of the plugin/theme
+msgid "http://mahshad.me/"
+msgstr ""

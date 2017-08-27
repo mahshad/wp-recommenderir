@@ -10,6 +10,19 @@ class Helper
 
         $exists_cookie = false;
         $user_cookie = hexdec(uniqid()); // unique key
+
+        // $user_cookie may be a long float number. so we should convert it to int
+        if( strpos( $user_cookie, 'E' ) )
+        {
+            $floatParts = explode( 'E', $user_cookie );
+
+            $strNum = $floatParts[0];
+            $num = (float) $floatParts[0];
+            $pow = intval( $floatParts[1] );
+
+            $user_cookie =  $num * pow(10 ,strlen($strNum)-2);
+        }
+
         $cookie_name = $_SERVER['SERVER_NAME'] . '_recomUser';
 
         if( $user_ID && get_option('recom_cookie_check') ) // user is logged in
@@ -68,16 +81,18 @@ class Helper
         return $url;
     }
 
-    public static function add_hash_to_links( $text, $hash = '' ) {
+    public static function add_hash_to_links( $text, $hash = '' )
+    {
         $text = preg_replace('/<a(.*)href="(.*?)(?:\#\.rec\.\d+)?"(.*)>/', '<a$1href="$2'.$hash.'"$3>', $text);
 
         return $text;
     }
 
-    public static function get_ids( $items ) {
+    public static function get_ids( $items )
+    {
         $post_ids = [];
 
-        if( $items )
+        if( is_array( $items ) )
         {
             foreach( $items as $item )
             {
@@ -87,5 +102,19 @@ class Helper
         }
 
         return $post_ids;
+    }
+
+    public static function change_array_dash_to_underline( $array )
+    {
+        array_walk( $array, function(&$value) { $value = str_replace( '-', '_', $value ); } );
+
+        return $array;
+    }
+
+    public static function change_array_underline_to_dash( $array )
+    {
+        array_walk( $array, function(&$value) { $value = str_replace( '_', '-', $value ); } );
+
+        return $array;
     }
 }

@@ -133,11 +133,13 @@ Class DisplayPostsShortcode
 		
 		// Set up initial query for post
 		$args = array(
-			'category_name'       => $category,
 			'order'               => $order,
 			'orderby'             => $orderby,
 			'posts_per_page'      => $posts_per_page
 		);
+
+		if( $category )
+			$args['category_name'] = $category;
 
 		if( $post_type )
 			$post_type = explode( ',', $post_type );

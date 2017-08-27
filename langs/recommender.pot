@@ -1,0 +1,285 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Recommender Service\n"
+"POT-Creation-Date: 2017-08-14 21:37+0430\n"
+"PO-Revision-Date: 2017-08-14 21:37+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.13\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/templates/settings.php:2
+msgid "Recommender Settings"
+msgstr ""
+
+#: assets/templates/settings.php:10
+msgid "General"
+msgstr ""
+
+#: assets/templates/settings.php:11
+msgid "Advanced"
+msgstr ""
+
+#: classes/Init.php:59
+msgid "Settings page"
+msgstr ""
+
+#: classes/Settings.php:20 classes/Widget.php:11 classes/Widget.php:12
+msgid "Recommender"
+msgstr ""
+
+#: classes/Settings.php:26
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: classes/Settings.php:43
+msgid "Service Address"
+msgstr ""
+
+#: classes/Settings.php:44
+msgid "http://192.168.0.1:1234"
+msgstr ""
+
+#: classes/Settings.php:47
+#, php-format
+msgid "For example: <span dir=\"ltr\">http://192.168.0.1:1234</span>"
+msgstr ""
+
+#: classes/Settings.php:51
+msgid "Sending tags"
+msgstr ""
+
+#: classes/Settings.php:53 classes/Settings.php:66 classes/Settings.php:73
+#: classes/Settings.php:80 classes/Settings.php:87 classes/Settings.php:94
+#: classes/Settings.php:108 classes/Settings.php:122 classes/Settings.php:129
+msgid "Active"
+msgstr ""
+
+#: classes/Settings.php:54
+msgid "Send post tags to recommender service."
+msgstr ""
+
+#: classes/Settings.php:64
+msgid "Unification of Cookies"
+msgstr ""
+
+#: classes/Settings.php:67
+msgid ""
+"If user is logged in with different devices, then the same cookie will be "
+"stored in each device."
+msgstr ""
+
+#: classes/Settings.php:71
+msgid "Scroll Counter"
+msgstr ""
+
+#: classes/Settings.php:74
+msgid ""
+"If user is scrolling the screen, then some rate of interest will be ingested "
+"to recommender service."
+msgstr ""
+
+#: classes/Settings.php:78
+msgid "Post Reading Counter"
+msgstr ""
+
+#: classes/Settings.php:81
+msgid ""
+"If user is reading the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr ""
+
+#: classes/Settings.php:85
+msgid "Add to Cart Counter"
+msgstr ""
+
+#: classes/Settings.php:88
+msgid ""
+"If user is adding the product to cart, then some rate of interest will be "
+"ingested to recommender service."
+msgstr ""
+
+#: classes/Settings.php:92
+msgid "Like Counter"
+msgstr ""
+
+#: classes/Settings.php:95
+msgid ""
+"If user likes the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr ""
+
+#: classes/Settings.php:99
+msgid "Like Selector Path"
+msgstr ""
+
+#: classes/Settings.php:102
+msgid ""
+"The selector path of like button<br>For example: <span dir=\"ltr\">#somediv ."
+"likebox a</span>"
+msgstr ""
+
+#: classes/Settings.php:106
+msgid "Share Counter"
+msgstr ""
+
+#: classes/Settings.php:109
+msgid ""
+"If user shared the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr ""
+
+#: classes/Settings.php:113
+msgid "Share Selector Path"
+msgstr ""
+
+#: classes/Settings.php:116
+msgid ""
+"The selector path of share button<br>For example: <span dir=\"ltr"
+"\">#somediv .sharebox a</span>"
+msgstr ""
+
+#: classes/Settings.php:120
+msgid "Content Copy Counter"
+msgstr ""
+
+#: classes/Settings.php:123
+msgid ""
+"If user is copy the post, then some rate of interest will be ingested to "
+"recommender service."
+msgstr ""
+
+#: classes/Settings.php:127
+msgid "Hash Counter"
+msgstr ""
+
+#: classes/Settings.php:130
+msgid ""
+"Enabling this option, the user cookie will be added to all links as a "
+"hash<br>If the user share the post link, we can determine the user, then "
+"some rate of interest will be ingested to recommender service."
+msgstr ""
+
+#: classes/Widget.php:113
+msgid "Title"
+msgstr ""
+
+#: classes/Widget.php:116
+msgid "Method"
+msgstr ""
+
+#: classes/Widget.php:124
+msgid "Please use this method only on single pages."
+msgstr ""
+
+#: classes/Widget.php:126
+msgid "The number of items"
+msgstr ""
+
+#: classes/Widget.php:130
+msgid "Dither"
+msgstr ""
+
+#: classes/Widget.php:133
+msgid "Radius"
+msgstr ""
+
+#: classes/Widget.php:137
+msgid "Column layouts of items"
+msgstr ""
+
+#: classes/Widget.php:152
+msgid "Display Post Thumbnail"
+msgstr ""
+
+#: classes/Widget.php:154
+msgid "Display Post Title"
+msgstr ""
+
+#: classes/Widget.php:156
+msgid "Display Post Date"
+msgstr ""
+
+#: classes/Widget.php:158
+msgid "Display Post Time"
+msgstr ""
+
+#: classes/Widget.php:160
+msgid "Display Post Summary"
+msgstr ""
+
+#: classes/Widget.php:162
+msgid "Post Summary Length"
+msgstr ""
+
+#: classes/Widget.php:171
+msgid "Recommend to user"
+msgstr ""
+
+#: classes/Widget.php:172
+msgid "Similar Items"
+msgstr ""
+
+#: classes/Widget.php:173
+msgid "Short Period of Time Trends"
+msgstr ""
+
+#: classes/Widget.php:174
+msgid "Long Period of Time Trends"
+msgstr ""
+
+#: classes/Widget.php:181
+msgid "1 Column"
+msgstr ""
+
+#: classes/Widget.php:182
+msgid "2 Columns"
+msgstr ""
+
+#: classes/Widget.php:183
+msgid "3 Columns"
+msgstr ""
+
+#: classes/Widget.php:184
+msgid "4 Columns"
+msgstr ""
+
+#: classes/Widget.php:185
+msgid "5 Columns"
+msgstr ""
+
+#: classes/Widget.php:186
+msgid "6 Columns"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Recommender Service"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/mahshad/wp-recommenderir"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Wordpress and Woocommerce Plugin for Recommender.ir"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mahshad Kalantari"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://mahshad.me/"
+msgstr ""

@@ -22,10 +22,17 @@ class Init extends Base
 		parent::__construct();
 
 		add_action( 'init', [&$this, 'init'] );
+		add_action( 'init', [&$this, 'init_i18n_support'] );
 		add_action( 'wp_enqueue_scripts', [&$this, 'scripts'] );
 		add_action( 'admin_enqueue_scripts', [&$this, 'admin_scripts'] );
 		add_action( 'wp_head', [&$this, 'buffer_start'] );
 		add_action( 'wp_footer', [&$this, 'buffer_end'] );
+
+		if( !empty( $this->send_tags ) )
+		{
+			add_action( 'save_post', [&$this, 'add_terms_admin_side'] );
+			add_action( 'wp', [&$this, 'add_terms_user_side'] );
+		}
 
 		if ( class_exists( 'WooCommerce' ) )
 			add_filter( 'woocommerce_add_cart_item_data', [&$this, 'woocommerce_add_to_cart'], 99, 2 );
@@ -42,14 +49,14 @@ class Init extends Base
 		foreach($array as $arr)
 		{
 			if( !get_option( 'recom_'.$arr ) )
-				add_option( 'recom_'.$arr, 'on' );
+				add_option( 'recom_'.$arr, '1' );
 		}
 	}
 
 	function plugin_settings_link( $links )
 	{
 		$url = get_admin_url() . 'admin.php?page=recommender_settings';
-		$settings_link = '<a href="'.$url.'">'.__('Settings page', 'recommender-ir').'</a>'; 
+		$settings_link = '<a href="'.$url.'">'.__('Settings page', 'recommender').'</a>'; 
 		array_unshift( $links, $settings_link );
 
 		return $links; 
@@ -63,6 +70,11 @@ class Init extends Base
 		new Settings();
 	}
 
+	public function init_i18n_support()
+	{
+		load_plugin_textdomain( 'recommender', false, dirname( RECOM_PLUGIN ) . '/langs' );
+	}
+
 	public function scripts()
 	{
 		global $post;
@@ -73,8 +85,8 @@ class Init extends Base
 			'item' => ''
 		);
 
-		wp_register_script( 'recommender-reading-time', RECOM_ASSETS_URL.'js/readingTime.min.js', array('jquery') );
-		wp_register_script( 'recommender-script', RECOM_ASSETS_URL.'js/scripts.js', array('jquery') );
+		wp_register_script( 'recommender-reading-time', RECOM_ASSETS_URL.'js/reading-time.min.js', null );
+		wp_register_script( 'recommender-script', RECOM_ASSETS_URL.'js/scripts.min.js', ['recommender-reading-time'] );
 
 		if( is_single() )
 		{
@@ -126,5 +138,63 @@ class Init extends Base
 			$result = $this->recommender->post_ingest( compact('id', 'url', 'value') );
 
 		return $result;
+	}
+
+	public function add_terms_admin_side( $post_id )
+	{
+		if( $this->send_tags )
+		{
+			$nocheck = true;
+
+			$taxonomies = [ 'post_tag', 'product_tag' ];
+			$args = [ 'orderby' => 'term_id', 'fields' => 'slugs' ];
+
+			$get_terms = wp_get_object_terms( $post_id, $taxonomies, $args );
+			if( !is_array( $get_terms ) ) return;
+
+			$terms = array_slice( $get_terms, 0, 3 ); // Recommender.ir needs only 3 items
+
+			$list = $this->recommender->termItemList( compact( 'post_id', 'nocheck' ) );
+			if( !empty( $list ) )
+			{
+				$removed_terms = array_diff( $list, $terms );
+				$terms = array_diff( $terms, $list );
+
+				$this->recommender->termItemRemove( compact( 'post_id', 'removed_terms', 'nocheck' ) );
+			}
+
+			$result = $this->recommender->termItemAdd( compact( 'post_id', 'terms', 'nocheck' ) );
+
+			update_post_meta( $post_id, 'recom_tags_is_send', $result );
+		}
+	}
+
+	public function add_terms_user_side()
+	{
+		if( is_single() )
+		{
+			$queried_object = get_queried_object();
+			$post_id = $queried_object->ID;
+			$meta_key = 'recom_tags_is_send';
+
+			$tags_send = get_post_meta( $post_id, $meta_key, true );
+			if( empty( $tags_send ) )
+			{
+				$nocheck = true;
+
+				$taxonomies = [ 'post_tag', 'product_tag' ];
+				$args = [ 'orderby' => 'term_id', 'fields' => 'slugs' ];
+
+				$get_terms = wp_get_object_terms( $post_id, $taxonomies, $args );
+				if( !is_array( $get_terms ) ) return;
+
+				$terms = array_slice( $get_terms, 0, 3 ); // Recommender.ir needs only 3 items
+
+				$result = $this->recommender->termItemAdd( compact( 'post_id', 'terms', 'nocheck' ) );
+				
+				if( $result )
+					update_post_meta( $post_id, $meta_key, $result );
+			}
+		}
 	}
 }

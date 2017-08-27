@@ -78,6 +78,7 @@
 }
 
 .recom-posts-listing {
+	padding: 0;
 	clear: both;
 	list-style-type: none;
 }

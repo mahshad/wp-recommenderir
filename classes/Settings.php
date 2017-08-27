@@ -17,13 +17,13 @@ class Settings
 
 	public function settings_menu()
 	{
-		add_menu_page( __('Recommender', 'recommender-ir'), __('Recommender', 'recommender-ir'), 'manage_options', 'recommender_settings', [&$this, 'settings_page'], null, 999 );
+		add_menu_page( __('Recommender', 'recommender'), __('Recommender', 'recommender'), 'manage_options', 'recommender_settings', [&$this, 'settings_page'], null, 999 );
 	}
 
 	public function settings_page()
 	{
 		if( !current_user_can('manage_options') )
-		wp_die(__('You do not have sufficient permissions to access this page.'));
+			wp_die(__('You do not have sufficient permissions to access this page.'));
 
 		require_once RECOM_ASSETS_DIR.'templates/settings.php';
 	}
@@ -40,10 +40,18 @@ class Settings
 			'fields' => array(
 				array(
 					'id' => 'address',
-					'label' => __('IP&Port Address', 'recommender-ir'),
-					'description' => __('For example:', 'recommender-ir') .' <span dir="ltr">http://192.168.0.1:1234</span>',
+					'label' => __('Service Address', 'recommender'),
+					'placeholder' => __('http://192.168.0.1:1234', 'recommender'),
 					'type' => 'text',
-					'dir' => 'ltr'
+					'dir' => 'ltr',
+					'description' => __('For example: <span dir="ltr">http://192.168.0.1:1234</span>', 'recommender')
+				),
+				array(
+					'id' => 'send_tags',
+					'label' => __('Sending tags', 'recommender'),
+					'type' => 'checkbox',
+					'option' => __('Active', 'recommender'),
+					'description' => __('Send post tags to recommender service.', 'recommender')
 				)
 			)
 		);
@@ -53,73 +61,73 @@ class Settings
 			'fields' => array(
 				array(
 					'id' => 'cookie_check',
-					'label' => __('Unification of Cookies', 'recommender-ir'),
+					'label' => __('Unification of Cookies', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user is logged in with different devices, then the same cookie will be stored in each device.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user is logged in with different devices, then the same cookie will be stored in each device.', 'recommender')
 				),
 				array(
 					'id' => 'active_scroll',
-					'label' => __('Scroll Counter', 'recommender-ir'),
+					'label' => __('Scroll Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user is scrolling the screen, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user is scrolling the screen, then some rate of interest will be ingested to recommender service.', 'recommender')
 				),
 				array(
 					'id' => 'active_read',
-					'label' => __('Post Reading Counter', 'recommender-ir'),
+					'label' => __('Post Reading Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user is reading the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user is reading the post, then some rate of interest will be ingested to recommender service.', 'recommender')
 				),
 				array(
 					'id' => 'active_cart',
-					'label' => __('Add to Cart Counter', 'recommender-ir'),
+					'label' => __('Add to Cart Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user is adding the product to cart, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user is adding the product to cart, then some rate of interest will be ingested to recommender service.', 'recommender')
 				),
 				array(
 					'id' => 'active_like',
-					'label' => __('Like Counter', 'recommender-ir'),
+					'label' => __('Like Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user likes the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user likes the post, then some rate of interest will be ingested to recommender service.', 'recommender')
 				),
 				array(
 					'id' => 'selector_like',
-					'label' => __('Like Selector Path', 'recommender-ir'),
+					'label' => __('Like Selector Path', 'recommender'),
 					'type' => 'text',
 					'dir' => 'ltr',
-					'description' => __('The selector path of like button<br>For example: <span dir="ltr">#somediv .likebox a</span>', 'recommender-ir')
+					'description' => __('The selector path of like button<br>For example: <span dir="ltr">#somediv .likebox a</span>', 'recommender')
 				),
 				array(
 					'id' => 'active_share',
-					'label' => __('Share Counter', 'recommender-ir'),
+					'label' => __('Share Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user shared the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user shared the post, then some rate of interest will be ingested to recommender service.', 'recommender')
 				),
 				array(
 					'id' => 'selector_share',
-					'label' => __('Share Selector Path', 'recommender-ir'),
+					'label' => __('Share Selector Path', 'recommender'),
 					'type' => 'text',
 					'dir' => 'ltr',
-					'description' => __('The selector path of share button<br>For example: <span dir="ltr">#somediv .sharebox a</span>', 'recommender-ir')
+					'description' => __('The selector path of share button<br>For example: <span dir="ltr">#somediv .sharebox a</span>', 'recommender')
 				),
 				array(
 					'id' => 'active_copy',
-					'label' => __('Content Copy Counter', 'recommender-ir'),
+					'label' => __('Content Copy Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('If user is copy the post, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('If user is copy the post, then some rate of interest will be ingested to recommender service.', 'recommender')
 				),
 				array(
 					'id' => 'active_hash',
-					'label' => __('Hash Counter', 'recommender-ir'),
+					'label' => __('Hash Counter', 'recommender'),
 					'type' => 'checkbox',
-					'option' => __('Activate', 'recommender-ir'),
-					'description' => __('Enabling this option, the user cookie will be added to all links as a hash<br>If the user share the post link, we can determine the user, then some rate of interest will be ingested to recommender service.', 'recommender-ir')
+					'option' => __('Active', 'recommender'),
+					'description' => __('Enabling this option, the user cookie will be added to all links as a hash<br>If the user share the post link, we can determine the user, then some rate of interest will be ingested to recommender service.', 'recommender')
 				)
 			)
 		);
@@ -169,25 +177,27 @@ class Settings
 		elseif (isset($field['default']))
 			$data = $field['default'];
 
+		$placeholder = !empty($field['placeholder']) ? 'placeholder="' . esc_attr($field['placeholder']) . '"' : '';
+
 		switch ($field['type']) {
 
 			case 'text':
 			case 'password':
 			case 'number':
-				$html .= '<input id="' . esc_attr($field['id']) . '" type="' . $field['type'] . '" name="' . esc_attr($option_name) . '" placeholder="' . esc_attr($field['placeholder']) . '" value="' . $data . '" dir="' . $field['dir'] . '" class="regular-text" />' . "\n";
+				$html .= '<input id="' . esc_attr($field['id']) . '" type="' . $field['type'] . '" name="' . esc_attr($option_name) . '" '.$placeholder.' value="' . $data . '" dir="' . $field['dir'] . '" class="regular-text" />' . "\n";
 				break;
 
 			case 'textarea':
-				$html .= '<textarea id="' . esc_attr($field['id']) . '" rows="5" cols="50" name="' . esc_attr($option_name) . '" placeholder="' . esc_attr($field['placeholder']) . '" dir="' . $field['dir'] . '" class="regular-text">' . $data . '</textarea><br/>' . "\n";
+				$html .= '<textarea id="' . esc_attr($field['id']) . '" rows="5" cols="50" name="' . esc_attr($option_name) . '" '.$placeholder.' dir="' . $field['dir'] . '" class="regular-text">' . $data . '</textarea><br/>' . "\n";
 				break;
 
 			case 'checkbox':
 				$checked = '';
 				$v = ($field['option']) ? $field['option'] : '';
-				if ($option && 'on' == $option) {
+				if ($option && '1' == $option) {
 					$checked = 'checked="checked"';
 				}
-				$html .= '<label for="' . esc_attr($field['id']) . '"><input id="' . esc_attr($field['id']) . '" type="' . $field['type'] . '" name="' . esc_attr($option_name) . '" ' . $checked . '/> ' . $v . '</label>' . "\n";
+				$html .= '<label for="' . esc_attr($field['id']) . '"><input id="' . esc_attr($field['id']) . '" type="' . $field['type'] . '" name="' . esc_attr($option_name) . '" value="1" ' . $checked . '/> ' . $v . '</label>' . "\n";
 				break;
 
 			case 'checkbox_multi':
@@ -235,18 +245,7 @@ class Settings
 				break;
 		}
 
-		switch ($field['type']) {
-
-			case 'checkbox_multi':
-			case 'radio':
-			case 'select_multi':
-				$html .= '<br/><p class="description">' . $field['description'] . '</p>';
-				break;
-
-			default:
-				$html .= '<p class="description"><label for="' . esc_attr($field['id']) . '">' . $field['description'] . '</label></p>' . "\n";
-				break;
-		}
+		$html .= '<br><p class="description"><label for="' . esc_attr($field['id']) . '">' . $field['description'] . '</label></p>' . "\n";
 
 		echo $html;
 	}

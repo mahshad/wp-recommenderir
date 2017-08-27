@@ -1,14 +1,15 @@
 {
-  "name": "missprogrammer/wp-recommenderir",
+  "name": "mahshad/wp-recommenderir",
+  "version": "1.1.0",
   "description": "Wordpress and Woocommerce Plugin for Recommender.ir",
-  "homepage": "https://github.com/missprogrammer/wp-recommenderir",
+  "homepage": "https://github.com/mahshad/wp-recommenderir",
   "keywords": ["recommender", "wordpress", "woocommerce", "plugin"],
   "type": "wordpress-plugin",
-  "license": "MIT",
+  "license": "GPLv2 or later",
   "authors": [
     {
       "name": "Mahshad Kalantari",
-      "email": "missprogrammer94@gmail.com",
+      "email": "mopomoor@gmail.com",
       "homepage": "http://mahshad.me",
       "role": "Developer"
     }

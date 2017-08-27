@@ -2,8 +2,8 @@
 Contributors: missprogrammer
 Tags: recommender, wordpress, woocommerce, plugin
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 4.6
+Tested up to: 4.8
+Stable tag: 4.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,11 +42,16 @@ To order or request additional information, please visit <http://recommender.ir/
 
 == Screenshots ==
 
-1. Plugin main settings
-2. Plugin advanced settings
+1. Main settings
+2. Advanced settings
 3. Widget
 
 == Changelog ==
+
+= 1.1.0 =
+* Added capability to sending post tags to recommender.ir service
+* Replaced jQuery dependencies with vanilla javascript
+* Improved AJAX performance
 
 = 1.0.2 =
 * Fixed an error.
