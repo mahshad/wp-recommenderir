@@ -146,10 +146,8 @@ class Init extends Base
 		{
 			$nocheck = true;
 
-			$taxonomies = [ 'post_tag', 'product_tag' ];
-			$args = [ 'orderby' => 'term_id', 'fields' => 'slugs' ];
+			$get_terms = Helper::get_terms( $post_id );
 
-			$get_terms = wp_get_object_terms( $post_id, $taxonomies, $args );
 			if( !is_array( $get_terms ) ) return;
 
 			$terms = array_slice( $get_terms, 0, 3 ); // Recommender.ir needs only 3 items
@@ -182,10 +180,8 @@ class Init extends Base
 			{
 				$nocheck = true;
 
-				$taxonomies = [ 'post_tag', 'product_tag' ];
-				$args = [ 'orderby' => 'term_id', 'fields' => 'slugs' ];
+				$get_terms = Helper::get_terms( $post_id );
 
-				$get_terms = wp_get_object_terms( $post_id, $taxonomies, $args );
 				if( !is_array( $get_terms ) ) return;
 
 				$terms = array_slice( $get_terms, 0, 3 ); // Recommender.ir needs only 3 items

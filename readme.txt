@@ -2,7 +2,7 @@
 Contributors: missprogrammer
 Tags: recommender, wordpress, woocommerce, plugin
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: 4.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -28,6 +28,8 @@ You can use recommender widget in order to show following methods:
 * similarity (similar items)
 * trendShortTime (trends in short time)
 * trendLongTime (trends in long time)
+* termBasedRecommendInclusive (recommend to user based on terms)
+* termBasedSimilarityInclusive (similar items based on terms)
 
 Requires at least Wordpress 4.0 and PHP 5.4
 
@@ -48,10 +50,13 @@ To order or request additional information, please visit <http://recommender.ir/
 
 == Changelog ==
 
+= 1.2.0 =
+* Added two new methods.
+
 = 1.1.0 =
-* Added capability to sending post tags to recommender.ir service
-* Replaced jQuery dependencies with vanilla javascript
-* Improved AJAX performance
+* Added capability to sending post tags to recommender.ir service.
+* Replaced jQuery dependencies with vanilla javascript.
+* Improved AJAX performance.
 
 = 1.0.2 =
 * Fixed an error.
@@ -65,5 +70,5 @@ To order or request additional information, please visit <http://recommender.ir/
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-Fixed a bug.
+= 1.2.0 =
+* Added two new methods.

@@ -104,6 +104,16 @@ class Helper
         return $post_ids;
     }
 
+    public static function get_terms( $post_id )
+    {
+        $taxonomies = [ 'post_tag', 'product_tag' ];
+        $args = [ 'orderby' => 'term_id', 'fields' => 'slugs' ];
+
+        $get_terms = wp_get_object_terms( $post_id, $taxonomies, $args );
+
+        return $get_terms;
+    }
+
     public static function change_array_dash_to_underline( $array )
     {
         array_walk( $array, function(&$value) { $value = str_replace( '-', '_', $value ); } );

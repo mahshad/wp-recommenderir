@@ -9,11 +9,17 @@ jQuery(document).ready(function($) {
 
         if(method == 'recommend') {
             recommend.show();
+        } else if(method == 'termBasedRecommendInclusive') {
+            recommend.show();
         } else {
             recommend.hide();
         }
 
         if(method == 'similarity') {
+            similar.show();
+        } else if(method == 'termBasedRecommendInclusive') {
+            similar.show();
+        } else if(method == 'termBasedSimilarityInclusive') {
             similar.show();
         } else {
             similar.hide();

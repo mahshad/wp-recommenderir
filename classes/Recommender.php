@@ -115,6 +115,64 @@ class Recommender
 		return Helper::get_ids( $trends );
 	}
 
+	public function get_termBasedRecommendInclusive( $args )
+	{
+		global $post;
+		extract( $args );
+
+		if( !$post->ID && !$post_ids ) return;
+
+		$item = ( $post_ids ) ? explode( ',', $post_ids ) : [ $post->ID ];
+
+		$post_id = $item[0];
+		$terms = Helper::get_terms( $post_id );
+
+		if( !is_array( $terms ) ) return;
+
+		$terms = array_slice( $terms, 0, 3 ); // Recommender.ir needs only 3 items
+		$terms = Helper::change_array_dash_to_underline( $terms );
+
+		$term = implode( '/', $terms );
+
+		$method = 'termBasedRecommendInclusive/'.$this->user_id.'/'.$term;
+		$options = compact( 'dither', 'radius' );
+
+		$recommends = $this->recommender_method( $method, $options );
+
+		$items = Helper::get_ids( $recommends );
+
+		return array_slice($items, 0, $howMany);
+	}
+
+	public function get_termBasedSimilarityInclusive( $args )
+	{
+		global $post;
+		extract( $args );
+
+		if( !$post->ID && !$post_ids ) return;
+
+		$item = ( $post_ids ) ? explode( ',', $post_ids ) : [ $post->ID ];
+
+		$post_id = $item[0];
+		$terms = Helper::get_terms( $post_id );
+
+		if( !is_array( $terms ) ) return;
+
+		$terms = array_slice( $terms, 0, 3 ); // Recommender.ir needs only 3 items
+		$terms = Helper::change_array_dash_to_underline( $terms );
+
+		$item = 'wp-'.$post_id;
+		$term = implode( '/', $terms );
+
+		$method = 'termBasedSimilarityInclusive/'.$item.'/'.$term;
+
+		$similarities = $this->recommender_method( $method );
+
+		$items = Helper::get_ids( $similarities );
+
+		return array_slice($items, 0, $howMany);
+	}
+
 	public function termItemAdd( $args )
 	{
 		extract( $args );

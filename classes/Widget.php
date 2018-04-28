@@ -31,12 +31,15 @@ class Widget extends \WP_Widget {
         $excerpt_length = $instance['excerpt_length'] ? $instance['excerpt_length'] : 'false';
 
         $post_ids = '';
-        if ( $method == 'similarity' )
+        if ( $method == 'similarity' || $method == 'termBasedSimilarityInclusive' )
         {
             $queried_object = get_queried_object();
-            $post_id = $queried_object->ID;
 
-            $post_ids = ' post_ids="'.$post_id.'"';
+            if ( $queried_object ) {
+                $post_id = $queried_object->ID;
+
+                $post_ids = ' post_ids="'.$post_id.'"';
+            }
         }
 
         echo $args['before_widget'];
@@ -58,8 +61,6 @@ class Widget extends \WP_Widget {
         $instance['dither'] = ! empty( $new_instance['dither'] );
         $instance['radius'] = ! empty( $new_instance['radius'] );
         $instance['columns'] = strip_tags( $new_instance['columns'] );
-        // $instance['category_display'] = ! empty( $new_instance['category_display'] );
-        // $instance['category_label'] = strip_tags( $new_instance['category_label'] );
         $instance['image_size'] = ! empty( $new_instance['image_size'] ) ? 'thumbnail' : '';
         $instance['include_title'] = ! empty( $new_instance['include_title'] );
         $instance['include_date'] = ! empty( $new_instance['include_date'] );
@@ -96,8 +97,6 @@ class Widget extends \WP_Widget {
         $dither = isset($instance['dither']) ? $instance['dither'] : 0;
         $radius = strip_tags($instance['radius']);
         $columns = isset($instance['columns']) ? $instance['columns'] : 1;
-        // $category_display = isset($instance['category_display']) ? $instance['category_display'] : 0;
-        // $category_label = isset($instance['category_label']) ? $instance['category_label'] : 'دسته‌بندی: ';
         $image_size = isset($instance['image_size']) ? 1 : 0;
         $include_title = isset($instance['include_title']) ? $instance['include_title'] : 1;
         $include_date = isset($instance['include_date']) ? $instance['include_date'] : 0;
@@ -105,8 +104,8 @@ class Widget extends \WP_Widget {
         $include_excerpt = isset($instance['include_excerpt']) ? $instance['include_excerpt'] : 0;
         $excerpt_length = isset($instance['excerpt_length']) ? $instance['excerpt_length'] : 7;
 
-        $recommend_style = ( !$method || $method == 'recommend' ) ? 'display:block;' : 'display:none;';
-        $similar_style = ( $method == 'similarity' ) ? 'display:block;' : 'display:none;';
+        $recommend_style = ( !$method || $method == 'recommend' || $method == 'termBasedRecommendInclusive' ) ? 'display:block;' : 'display:none;';
+        $similar_style = ( $method == 'similarity' || $method == 'termBasedRecommendInclusive' || $method == 'termBasedSimilarityInclusive' ) ? 'display:block;' : 'display:none;';
         ?>
         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title', 'recommender') ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
@@ -123,7 +122,6 @@ class Widget extends \WP_Widget {
 
         <p><label for="<?php echo $this->get_field_id('how_many'); ?>"><?php _e('The number of items', 'recommender') ?>:</label>
         <input class="widefat" id="<?php echo $this->get_field_id('how_many'); ?>" name="<?php echo $this->get_field_name('how_many'); ?>" type="number" value="<?php echo esc_attr($how_many); ?>" min="1" /></p>
-
         
         <p class="recommend" style="<?php echo $recommend_style; ?>"><input id="<?php echo $this->get_field_id('dither'); ?>" name="<?php echo $this->get_field_name('dither'); ?>" type="checkbox" <?php checked($dither); ?> />&nbsp;<label for="<?php echo $this->get_field_id('dither'); ?>"><?php _e('Dither', 'recommender') ?></label></p>
         
@@ -161,6 +159,8 @@ class Widget extends \WP_Widget {
         return [
             'recommend' => __('Recommend to user', 'recommender'),
             'similarity' => __('Similar Items', 'recommender'),
+            'termBasedRecommendInclusive' => __('Term Based Recommend to user', 'recommender'),
+            'termBasedSimilarityInclusive' => __('Term Based Similar Items', 'recommender'),
             'trendShortTime' => __('Short Period of Time Trends', 'recommender'),
             'trendLongTime' => __('Long Period of Time Trends', 'recommender')
         ];

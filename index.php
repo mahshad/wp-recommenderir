@@ -4,7 +4,7 @@
  * Plugin Name:       Recommender Service
  * Plugin URI:        https://wordpress.org/plugins/recommender/
  * Description:       Wordpress and Woocommerce Plugin for Recommender.ir
- * Version:           1.1.0
+ * Version:           1.2.0
  * Author:            Mahshad Kalantari
  * Author URI:        http://mahshad.me/
  * Text Domain:       recommender

@@ -1,22 +1,22 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Recommender Service\n"
-"POT-Creation-Date: 2017-08-14 21:37+0430\n"
-"PO-Revision-Date: 2017-08-15 00:13+0430\n"
+"POT-Creation-Date: 2018-04-28 06:19+0430\n"
+"PO-Revision-Date: 2018-04-28 06:24+0430\n"
+"Last-Translator: Mahshad Kalantari <mopomoor@gmail.com>\n"
 "Language-Team: \n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.13\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: Mahshad Kalantari <mopomoor@gmail.com>\n"
-"Language: fa_IR\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -53,7 +53,6 @@ msgid "http://192.168.0.1:1234"
 msgstr ""
 
 #: classes/Settings.php:47
-#, php-format
 msgid "For example: <span dir=\"ltr\">http://192.168.0.1:1234</span>"
 msgstr "مثلا: <span dir=\"ltr\">http://192.168.0.1:1234</span>"
 
@@ -77,8 +76,8 @@ msgstr "یکسان سازی کوکی کاربر در دستگاه های مخت�
 
 #: classes/Settings.php:67
 msgid ""
-"If user is logged in with different devices, then the same cookie will be stored "
-"in each device."
+"If user is logged in with different devices, then the same cookie will be "
+"stored in each device."
 msgstr ""
 "اگر کاربر با چند سیستم در سایت لاگین کند، در هر سیستم کوکی یکسانی ذخیره می‌شود."
 
@@ -108,8 +107,8 @@ msgstr "محسابه‌گر سبد خرید"
 
 #: classes/Settings.php:88
 msgid ""
-"If user is adding the product to cart, then some rate of interest will be ingested "
-"to recommender service."
+"If user is adding the product to cart, then some rate of interest will be "
+"ingested to recommender service."
 msgstr ""
 "اگر کاربر محصولی به سبد خرید اضافه کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
 
@@ -119,8 +118,8 @@ msgstr "محسابه‌گر لایک"
 
 #: classes/Settings.php:95
 msgid ""
-"If user likes the post, then some rate of interest will be ingested to recommender "
-"service."
+"If user likes the post, then some rate of interest will be ingested to "
+"recommender service."
 msgstr "اگر کاربر اقدام به لایک مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
 
 #: classes/Settings.php:99
@@ -131,7 +130,8 @@ msgstr "سلکتور لایک"
 msgid ""
 "The selector path of like button<br>For example: <span dir=\"ltr\">#somediv ."
 "likebox a</span>"
-msgstr "مسیر سلکتور دکمه لایک<br>مثلا <span dir=\"ltr\">#somediv .likebox a</span>"
+msgstr ""
+"مسیر سلکتور دکمه لایک<br>مثلا <span dir=\"ltr\">#somediv .likebox a</span>"
 
 #: classes/Settings.php:106
 msgid "Share Counter"
@@ -153,7 +153,8 @@ msgid ""
 "The selector path of share button<br>For example: <span dir=\"ltr\">#somediv ."
 "sharebox a</span>"
 msgstr ""
-"مسیر سلکتور دکمه اشتراک‌گذاری<br>مثلا <span dir=\"ltr\">#somediv .sharebox a</span>"
+"مسیر سلکتور دکمه اشتراک‌گذاری<br>مثلا <span dir=\"ltr\">#somediv .sharebox a</"
+"span>"
 
 #: classes/Settings.php:120
 msgid "Content Copy Counter"
@@ -163,7 +164,8 @@ msgstr "محسابه‌گر کپی"
 msgid ""
 "If user is copy the post, then some rate of interest will be ingested to "
 "recommender service."
-msgstr "اگر کاربر اقدام به کپی از مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
+msgstr ""
+"اگر کاربر اقدام به کپی از مطلب کند، میزانی از علاقه‌مندی برای او ثبت می‌شود."
 
 #: classes/Settings.php:127
 msgid "Hash Counter"
@@ -171,122 +173,119 @@ msgstr "محسابه‌گر هش"
 
 #: classes/Settings.php:130
 msgid ""
-"Enabling this option, the user cookie will be added to all links as a hash<br>If "
-"the user share the post link, we can determine the user, then some rate of "
-"interest will be ingested to recommender service."
+"Enabling this option, the user cookie will be added to all links as a "
+"hash<br>If the user share the post link, we can determine the user, then some "
+"rate of interest will be ingested to recommender service."
 msgstr ""
-"با فعال‌سازی این گزینه به تمام لینک ها کد شناسایی کاربر اضافه خواهد شد<br>در صورتی "
-"که کاربر لینکی را برای جایی بفرستد می‌توان فهمید کدام کاربر بوده و میزانی از "
-"علاقه‌مندی را برایش ثبت کرد."
+"با فعال‌سازی این گزینه به تمام لینک ها کد شناسایی کاربر اضافه خواهد شد<br>در "
+"صورتی که کاربر لینکی را برای جایی بفرستد می‌توان فهمید کدام کاربر بوده و میزانی "
+"از علاقه‌مندی را برایش ثبت کرد."
 
-#: classes/Widget.php:113
+#: classes/Widget.php:110
 msgid "Title"
 msgstr "عنوان"
 
-#: classes/Widget.php:116
+#: classes/Widget.php:113
 msgid "Method"
 msgstr "متد"
 
-#: classes/Widget.php:124
+#: classes/Widget.php:121
 msgid "Please use this method only on single pages."
 msgstr "از این متد تنها در ابزارک‌های صفحات داخلی استفاده کنید."
 
-#: classes/Widget.php:126
+#: classes/Widget.php:123
 msgid "The number of items"
 msgstr "تعداد آیتم‌ها"
 
-#: classes/Widget.php:130
+#: classes/Widget.php:126
 msgid "Dither"
 msgstr "پیشنهاد لرزان"
 
-#: classes/Widget.php:133
+#: classes/Widget.php:129
 msgid "Radius"
 msgstr "شعاع"
 
-#: classes/Widget.php:137
+#: classes/Widget.php:133
 msgid "Column layouts of items"
 msgstr "ستون‌بندی آیتم‌ها"
 
-#: classes/Widget.php:152
+#: classes/Widget.php:141
 msgid "Display Post Thumbnail"
 msgstr "نمایش تصویرشاخص پست"
 
-#: classes/Widget.php:154
+#: classes/Widget.php:143
 msgid "Display Post Title"
 msgstr "نمایش عنوان پست"
 
-#: classes/Widget.php:156
+#: classes/Widget.php:145
 msgid "Display Post Date"
 msgstr "نمایش تاریخ پست"
 
-#: classes/Widget.php:158
+#: classes/Widget.php:147
 msgid "Display Post Time"
 msgstr "نمایش زمان پست"
 
-#: classes/Widget.php:160
+#: classes/Widget.php:149
 msgid "Display Post Summary"
 msgstr "نمایش خلاصه پست"
 
-#: classes/Widget.php:162
+#: classes/Widget.php:151
 msgid "Post Summary Length"
 msgstr "طول خلاصه پست"
 
-#: classes/Widget.php:171
+#: classes/Widget.php:160
 msgid "Recommend to user"
 msgstr "پیشنهاد به کاربر"
 
-#: classes/Widget.php:172
+#: classes/Widget.php:161
 msgid "Similar Items"
 msgstr "آیتم های مشابه"
 
-#: classes/Widget.php:173
+#: classes/Widget.php:162
+msgid "Term Based Recommend to user"
+msgstr "پیشنهاد به کاربر براساس برچسب ها"
+
+#: classes/Widget.php:163
+msgid "Term Based Similar Items"
+msgstr "آیتم های مشابه براساس برچسب ها"
+
+#: classes/Widget.php:164
 msgid "Short Period of Time Trends"
 msgstr "محبوبترن آیتم‌ها در لحظه (ترندز) - کوتاه مدت"
 
-#: classes/Widget.php:174
+#: classes/Widget.php:165
 msgid "Long Period of Time Trends"
 msgstr "محبوبترن آیتم‌ها در لحظه (ترندز) - بلند مدت"
 
-#: classes/Widget.php:181
+#: classes/Widget.php:172
 msgid "1 Column"
 msgstr "1 ستونه"
 
-#: classes/Widget.php:182
+#: classes/Widget.php:173
 msgid "2 Columns"
 msgstr "2 ستونه"
 
-#: classes/Widget.php:183
+#: classes/Widget.php:174
 msgid "3 Columns"
 msgstr "3  ستونه"
 
-#: classes/Widget.php:184
+#: classes/Widget.php:175
 msgid "4 Columns"
 msgstr "4 ستونه"
 
-#: classes/Widget.php:185
+#: classes/Widget.php:176
 msgid "5 Columns"
 msgstr "5 ستونه"
 
-#: classes/Widget.php:186
+#: classes/Widget.php:177
 msgid "6 Columns"
 msgstr "6 ستونه"
 
-#. Plugin Name of the plugin/theme
-msgid "Recommender Service"
-msgstr "سرویس رکامندر"
+#~ msgid "Recommender Service"
+#~ msgstr "سرویس رکامندر"
 
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/mahshad/wp-recommenderir"
-msgstr ""
+#~ msgid "Wordpress and Woocommerce Plugin for Recommender.ir"
+#~ msgstr "پلاگین وردپرس و ووکامرس سرویس رکامندر.آی آر"
 
-#. Description of the plugin/theme
-msgid "Wordpress and Woocommerce Plugin for Recommender.ir"
-msgstr "پلاگین وردپرس و ووکامرس سرویس رکامندر.آی آر"
-
-#. Author of the plugin/theme
-msgid "Mahshad Kalantari"
-msgstr "مهشاد کلانتری"
-
-#. Author URI of the plugin/theme
-msgid "http://mahshad.me/"
-msgstr ""
+#~ msgid "Mahshad Kalantari"
+#~ msgstr "مهشاد کلانتری"
